@@ -146,10 +146,10 @@ HTML_TEMPLATE = """
         // CORREGIDO AQUÍ: El primer elemento de la lista para que coincida perfectamente al avanzar/retroceder
         const preguntas = [
             "¿Has estado bien?",
-            "¿comes bien?,",
-            "¿Me extrañas..?,",
-            "¿Piensas en mí..?,",
-            "¿Pronto volveremos a hablar..?,",
+            "¿Comes bien?",
+            "¿Me extrañas..?",
+            "¿Piensas en mí..?",
+            "¿Pronto volveremos a hablar?",
             "¿Lo volvemos a intentar una vez más..?"
         ];
 
