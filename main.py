@@ -51,8 +51,10 @@ HTML_TEMPLATE = """
             background-color: #fffdfd;
             min-height: 80px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 15px;
         }
         .verse {
             color: #c9184a;
@@ -95,10 +97,10 @@ HTML_TEMPLATE = """
             background-color: #ae2012;
         }
         .gif-container {
-            margin-top: 15px;
+            margin-top: 10px;
         }
         .gif-container img {
-            max-width: 180px;
+            max-width: 160px;
             height: auto;
             border-radius: 10px;
         }
@@ -107,8 +109,8 @@ HTML_TEMPLATE = """
 <body>
 
     <div class="card">
-        <div class="ribbon" id="cardIcon">💘</div>
-        <div class="title" id="cardTitle">✨ Para mi Negro ✨</div>
+        <div class="ribbon" id="cardIcon">🎀</div>
+        <div class="title" id="cardTitle">✨ Para mi flaco ✨</div>
         
         <div id="gameSection">
             <div class="verse-container">
@@ -117,13 +119,13 @@ HTML_TEMPLATE = """
             
             <div class="btn-container">
                 <button class="btn btn-yes" id="btnYes" onclick="nextQuestion()">Sí 💕</button>
-                <button class="btn btn-no" id="btnNo" onclick="shrinkNo()">No 🥺</button>
+                <button class="btn btn-no" id="btnNo" onclick="handleNoClick()">No 🥺</button>
             </div>
         </div>
 
         <div id="finalSection" style="display: none;">
             <div class="verse-container">
-                <p class="verse" id="finalMessage">Gracis por tu atención, esperaré por tu amor... 💕</p>
+                <p class="verse" id="finalMessage">Gracis por tu atención, ya puedes cerrar esta pestañita, Te Amo Mi Negro... 💕</p>
                 <div class="gif-container">
                     <img src="https://media.tenor.com/E874S_b_770AAAAi/hello-kitty-love.gif" alt="Hello Kitty Love">
                 </div>
@@ -133,11 +135,11 @@ HTML_TEMPLATE = """
 
     <script>
         const preguntas = [
-            "¿Holaa..¿has estado bien?",
-            "¿comes bien?,",
-            "¿Me extrañas..?,",
-            "¿Piensas en mí..?,",
-            "¿Pronto volveremos a hablar..?,",
+            "Holaa..¿has estado bien?",
+            "¿comes bien?",
+            "¿Me extrañas..?",
+            "¿Piensas en mí..?",
+            "¿Pronto volveremos a hablar..?",
             "¿Lo volveremos a intentar una última vez..?"
         ];
 
@@ -145,28 +147,28 @@ HTML_TEMPLATE = """
         let yesScale = 1.0;
         let noScale = 1.0;
 
-        function shrinkNo() {
-            // El botón "No" siempre se encoge
-            noScale -= 0.15;
-            const btnNo = document.getElementById('btnNo');
-            btnNo.style.transform = "scale(" + noScale + ")";
-
-            // El botón "Sí" SOLO crece si estamos en la última pregunta (índice de la última pregunta)
+        function handleNoClick() {
             if (currentStep === preguntas.length - 1) {
                 yesScale += 0.25;
-                const btnYes = document.getElementById('btnYes');
-                btnYes.style.transform = "scale(" + yesScale + ")";
-            }
+                noScale -= 0.15;
 
-            if (noScale <= 0.25) {
-                btnNo.style.display = 'none';
+                const btnYes = document.getElementById('btnYes');
+                const btnNo = document.getElementById('btnNo');
+
+                btnYes.style.transform = "scale(" + yesScale + ")";
+                btnNo.style.transform = "scale(" + noScale + ")";
+
+                if (noScale <= 0.25) {
+                    btnNo.style.display = 'none';
+                }
+            } else {
+                nextQuestion();
             }
         }
 
         function nextQuestion() {
             currentStep++;
 
-            // Reseteamos tamaños para la siguiente pregunta
             yesScale = 1.0;
             noScale = 1.0;
             const btnYes = document.getElementById('btnYes');
