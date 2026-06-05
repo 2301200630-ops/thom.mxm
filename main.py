@@ -110,7 +110,7 @@ HTML_TEMPLATE = """
 
     <div class="card">
         <div class="ribbon" id="cardIcon">🎀</div>
-        <div class="title" id="cardTitle">✨ Para mi flaco ✨</div>
+        <div class="title" id="cardTitle">✨ Para mi flaccco ✨</div>
         
         <div id="gameSection">
             <div class="verse-container">
