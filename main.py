@@ -95,19 +95,23 @@ HTML_TEMPLATE = """
             background-color: #ae2012;
         }
         
-        /* Estilos específicos para la pantalla limpia del final */
         #finalSection {
             text-align: center;
             padding: 20px;
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            box-sizing: border-box;
         }
         .final-text {
             color: #ff4d6d;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            padding: 0 10px;
         }
         .gif-container img {
-            max-width: 180px;
+            max-width: 160px;
             height: auto;
             border-radius: 10px;
         }
@@ -134,19 +138,18 @@ HTML_TEMPLATE = """
     <div id="finalSection" style="display: none;">
         <p class="final-text">Gracis por tu atención, ya puedes cerrar esta pestañita, Te Amo Mi Negro... 💕</p>
         <div class="gif-container">
-            <img src="https://media.tenor.com/E874S_b_770AAAAi/hello-kitty-love.gif" alt="Hello Kitty Love">
+            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbms1N2pxZ2ZpYW94Ym53Y29wZDR5b3Z1bnduMms0MXg3b3VscG82dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9w47chpNYAtfO/giphy.gif" alt="Hello Kitty Love">
         </div>
     </div>
 
     <script>
         const preguntas = [
             "Holaa..¿has estado bien?",
-            "¿comes bien?",
+            "¿Comes bien?",
             "¿Me extrañas..?",
             "¿Piensas en mí..?",
             "¿Pronto volveremos a hablar..?",
-            "¿Lo volvemos a intentar una vez más..?"
-        ];
+            "¿Lo volvemos a intentar una vez más..?"        ];
 
         let currentStep = 0;
         let yesScale = 1.0;
@@ -186,11 +189,8 @@ HTML_TEMPLATE = """
             if (currentStep < preguntas.length) {
                 document.getElementById('questionText').innerText = preguntas[currentStep];
             } else {
-                // Aquí ocurre la magia: borramos toda la tarjeta rosa y cambiamos el fondo a blanco
                 document.getElementById('mainCard').style.display = 'none';
                 document.body.style.backgroundColor = '#ffffff'; 
-                
-                // Mostramos la sección final limpia
                 document.getElementById('finalSection').style.display = 'block';
             }
         }
