@@ -95,7 +95,6 @@ HTML_TEMPLATE = """
             background-color: #ae2012;
         }
         
-        /* Ajustes exactos basados en tus capturas */
         #finalSection {
             text-align: center;
             padding: 20px;
@@ -122,11 +121,11 @@ HTML_TEMPLATE = """
 
     <div class="card" id="mainCard">
         <div class="ribbon" id="cardIcon">🎀</div>
-        <div class="title" id="cardTitle">💕Para mi flaco 💕</div>
+        <div class="title" id="cardTitle">💕 Para mi flaco 💕</div>
         
         <div id="gameSection">
             <div class="verse-container">
-                <p class="verse" id="questionText">¿Holaa..¿has estado bien?</p>
+                <p class="verse" id="questionText">¿Has estado bien?</p>
             </div>
             
             <div class="btn-container">
@@ -144,13 +143,14 @@ HTML_TEMPLATE = """
     </div>
 
     <script>
+        // CORREGIDO AQUÍ: El primer elemento de la lista para que coincida perfectamente al avanzar/retroceder
         const preguntas = [
             "¿Has estado bien?",
-            "¿Comes bien?,",
+            "¿comes bien?,",
             "¿Me extrañas..?,",
             "¿Piensas en mí..?,",
             "¿Pronto volveremos a hablar..?,",
-            "¿Lo volvemos a intentar una vez más ..?”
+            "¿Lo volvemos a intentar una vez más..?"
         ];
 
         let currentStep = 0;
@@ -184,9 +184,11 @@ HTML_TEMPLATE = """
             const btnYes = document.getElementById('btnYes');
             const btnNo = document.getElementById('btnNo');
             
-            btnYes.style.transform = 'scale(1)';
-            btnNo.style.transform = 'scale(1)';
-            btnNo.style.display = 'block';
+            if (btnYes && btnNo) {
+                btnYes.style.transform = 'scale(1)';
+                btnNo.style.transform = 'scale(1)';
+                btnNo.style.display = 'block';
+            }
 
             if (currentStep < preguntas.length) {
                 document.getElementById('questionText').innerText = preguntas[currentStep];
