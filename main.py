@@ -9,7 +9,7 @@ HTML_TEMPLATE = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Negro 💕</title>
+    <title>Mi amor 💕</title>
     <style>
         body {
             background-color: #fce4ec;
@@ -78,7 +78,6 @@ HTML_TEMPLATE = """
             transition: transform 0.2s ease, background-color 0.2s;
             display: block;
         }
-        /* --- BOTÓN SÍ COLOR VERDE --- */
         .btn-yes {
             background-color: #2a9d8f;
             padding: 12px 35px;
@@ -87,7 +86,6 @@ HTML_TEMPLATE = """
         .btn-yes:hover {
             background-color: #3aa89b;
         }
-        /* --- BOTÓN NO COLOR CARMESÍ --- */
         .btn-no {
             background-color: #9b2226;
             padding: 12px 25px;
@@ -110,11 +108,11 @@ HTML_TEMPLATE = """
 
     <div class="card">
         <div class="ribbon" id="cardIcon">💘</div>
-        <div class="title" id="cardTitle">✨ Para mi flaco ✨</div>
+        <div class="title" id="cardTitle">✨ Para mi Negro ✨</div>
         
         <div id="gameSection">
             <div class="verse-container">
-                <p class="verse" id="questionText">¿Te acuerdas de cuando todo era risas?</p>
+                <p class="verse" id="questionText">¿Holaa..¿has estado bien?</p>
             </div>
             
             <div class="btn-container">
@@ -125,7 +123,7 @@ HTML_TEMPLATE = """
 
         <div id="finalSection" style="display: none;">
             <div class="verse-container">
-                <p class="verse">Gracis por tu atención, esperaré por tu amor... 💕</p>
+                <p class="verse" id="finalMessage">Gracis por tu atención, esperaré por tu amor... 💕</p>
                 <div class="gif-container">
                     <img src="https://media.tenor.com/E874S_b_770AAAAi/hello-kitty-love.gif" alt="Hello Kitty Love">
                 </div>
@@ -135,12 +133,12 @@ HTML_TEMPLATE = """
 
     <script>
         const preguntas = [
-            "Holaa..¿has estado bien?",
-            "¿comes bien?,
-            "¿Me extrañas..?,
-            "¿Piensas en mí..?",
-            "¿Pronto volveremos a hablar..?",
-            "¿Lo volveremos a intentar una última vez..? Mi Flaco... <‘3"
+            "¿Holaa..¿has estado bien?",
+            "¿comes bien?,",
+            "¿Me extrañas..?,",
+            "¿Piensas en mí..?,",
+            "¿Pronto volveremos a hablar..?,",
+            "¿Lo volveremos a intentar una última vez..?"
         ];
 
         let currentStep = 0;
@@ -148,14 +146,17 @@ HTML_TEMPLATE = """
         let noScale = 1.0;
 
         function shrinkNo() {
-            yesScale += 0.25;
+            // El botón "No" siempre se encoge
             noScale -= 0.15;
-
-            const btnYes = document.getElementById('btnYes');
             const btnNo = document.getElementById('btnNo');
+            btnNo.style.transform = "scale(" + noScale + ")";
 
-            btnYes.style.transform = `scale(${yesScale})`;
-            btnNo.style.transform = `scale(${noScale})`;
+            // El botón "Sí" SOLO crece si estamos en la última pregunta (índice de la última pregunta)
+            if (currentStep === preguntas.length - 1) {
+                yesScale += 0.25;
+                const btnYes = document.getElementById('btnYes');
+                btnYes.style.transform = "scale(" + yesScale + ")";
+            }
 
             if (noScale <= 0.25) {
                 btnNo.style.display = 'none';
@@ -181,13 +182,17 @@ HTML_TEMPLATE = """
                 document.getElementById('gameSection').style.display = 'none';
                 document.getElementById('finalSection').style.display = 'block';
                 document.getElementById('cardIcon').innerText = "💝";
-                document.getElementById('cardTitle').innerText = "✨ Para Ti Con Amor ✨";
+                document.getElementById('cardTitle').innerText = "✨ Para Ti, Mi Amor ✨";
             }
         }
     </script>
 </body>
 </html>
 """
+
+@app.route('/')
+def index():
+    return render_template_string(HTML_TEMPLATE)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
