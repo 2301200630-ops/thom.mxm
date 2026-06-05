@@ -9,7 +9,7 @@ HTML_TEMPLATE = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi amor 💕</title>
+    <title>Mi Negro. 💕</title>
     <style>
         body {
             background-color: #fce4ec;
@@ -95,23 +95,24 @@ HTML_TEMPLATE = """
             background-color: #ae2012;
         }
         
+        /* Ajustes exactos basados en tus capturas */
         #finalSection {
             text-align: center;
             padding: 20px;
             position: absolute;
-            top: 40px;
+            top: 40px; 
             width: 100%;
             box-sizing: border-box;
         }
         .final-text {
             color: #ff4d6d;
-            font-size: 14px;
+            font-size: 14px; 
             font-weight: bold;
             margin-bottom: 30px;
             padding: 0 10px;
         }
         .gif-container img {
-            max-width: 160px;
+            max-width: 150px; 
             height: auto;
             border-radius: 10px;
         }
@@ -121,7 +122,7 @@ HTML_TEMPLATE = """
 
     <div class="card" id="mainCard">
         <div class="ribbon" id="cardIcon">🎀</div>
-        <div class="title" id="cardTitle">💕 Para mi flaco 💕</div>
+        <div class="title" id="cardTitle">💕Para mi flaco 💕</div>
         
         <div id="gameSection">
             <div class="verse-container">
@@ -136,20 +137,21 @@ HTML_TEMPLATE = """
     </div>
 
     <div id="finalSection" style="display: none;">
-        <p class="final-text">Gracis por tu atención, ya puedes cerrar esta pestañita, Te Amo Mi Negro... 💕</p>
+        <p class="final-text">¡Gracias por leer! Ya puedes cerrar esta pestañita, Te Amo Mi Negro. 💕</p>
         <div class="gif-container">
-            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbms1N2pxZ2ZpYW94Ym53Y29wZDR5b3Z1bnduMms0MXg3b3VscG82dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9w47chpNYAtfO/giphy.gif" alt="Hello Kitty Love">
+            <img src="https://i.postimg.cc/0jXvC61g/hello-kitty-love.gif" alt="Hello Kitty Love">
         </div>
     </div>
 
     <script>
         const preguntas = [
             "¿Has estado bien?",
-            "¿Comes bien?",
-            "¿Me extrañas..?",
-            "¿Piensas en mí..?",
-            "¿Pronto volveremos a hablar..?",
-            "¿Lo volvemos a intentar una vez más..?"        ];
+            "¿Comes bien?,",
+            "¿Me extrañas..?,",
+            "¿Piensas en mí..?,",
+            "¿Pronto volveremos a hablar..?,",
+            "¿Lo volvemos a intentar una vez más ..?”
+        ];
 
         let currentStep = 0;
         let yesScale = 1.0;
