@@ -51,10 +51,8 @@ HTML_TEMPLATE = """
             background-color: #fffdfd;
             min-height: 80px;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 15px;
         }
         .verse {
             color: #c9184a;
@@ -96,11 +94,20 @@ HTML_TEMPLATE = """
         .btn-no:hover {
             background-color: #ae2012;
         }
-        .gif-container {
-            margin-top: 10px;
+        
+        /* Estilos específicos para la pantalla limpia del final */
+        #finalSection {
+            text-align: center;
+            padding: 20px;
+        }
+        .final-text {
+            color: #ff4d6d;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
         .gif-container img {
-            max-width: 160px;
+            max-width: 180px;
             height: auto;
             border-radius: 10px;
         }
@@ -108,9 +115,9 @@ HTML_TEMPLATE = """
 </head>
 <body>
 
-    <div class="card">
+    <div class="card" id="mainCard">
         <div class="ribbon" id="cardIcon">🎀</div>
-        <div class="title" id="cardTitle">✨ Para mi flaccco ✨</div>
+        <div class="title" id="cardTitle">💕 Para mi flaco 💕</div>
         
         <div id="gameSection">
             <div class="verse-container">
@@ -122,14 +129,12 @@ HTML_TEMPLATE = """
                 <button class="btn btn-no" id="btnNo" onclick="handleNoClick()">No 🥺</button>
             </div>
         </div>
+    </div>
 
-        <div id="finalSection" style="display: none;">
-            <div class="verse-container">
-                <p class="verse" id="finalMessage">Gracis por tu atención, ya puedes cerrar esta pestañita, Te Amo Mi Negro... 💕</p>
-                <div class="gif-container">
-                    <img src="https://media.tenor.com/E874S_b_770AAAAi/hello-kitty-love.gif" alt="Hello Kitty Love">
-                </div>
-            </div>
+    <div id="finalSection" style="display: none;">
+        <p class="final-text">Gracis por tu atención, ya puedes cerrar esta pestañita, Te Amo Mi Negro... 💕</p>
+        <div class="gif-container">
+            <img src="https://media.tenor.com/E874S_b_770AAAAi/hello-kitty-love.gif" alt="Hello Kitty Love">
         </div>
     </div>
 
@@ -140,7 +145,7 @@ HTML_TEMPLATE = """
             "¿Me extrañas..?",
             "¿Piensas en mí..?",
             "¿Pronto volveremos a hablar..?",
-            "¿Lo volveremos a intentar una última vez..?"
+            "¿Lo volvemos a intentar una vez más..?"
         ];
 
         let currentStep = 0;
@@ -181,10 +186,12 @@ HTML_TEMPLATE = """
             if (currentStep < preguntas.length) {
                 document.getElementById('questionText').innerText = preguntas[currentStep];
             } else {
-                document.getElementById('gameSection').style.display = 'none';
+                // Aquí ocurre la magia: borramos toda la tarjeta rosa y cambiamos el fondo a blanco
+                document.getElementById('mainCard').style.display = 'none';
+                document.body.style.backgroundColor = '#ffffff'; 
+                
+                // Mostramos la sección final limpia
                 document.getElementById('finalSection').style.display = 'block';
-                document.getElementById('cardIcon').innerText = "💝";
-                document.getElementById('cardTitle').innerText = "✨ Para Ti, Mi Amor ✨";
             }
         }
     </script>
