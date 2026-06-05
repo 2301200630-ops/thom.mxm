@@ -138,19 +138,18 @@ HTML_TEMPLATE = """
     <div id="finalSection" style="display: none;">
         <p class="final-text">¡Gracias por leer! Ya puedes cerrar esta pestañita, Te Amo Mi Negro. 💕</p>
         <div class="gif-container">
-            <img src="https://i.postimg.cc/0jXvC61g/hello-kitty-love.gif" alt="Hello Kitty Love">
+            <img src="data:image/gif;base64,R0lGODlhZABkAPQAAP///wAAAPr6+uLi4t7e3tXV1czMzMvLy8PDw729vba2trW1tazMzKysrJSUlISEhHd3d21tbV1dXUJCQjw8PDAwMC0tLSUlJS0NDQoKCgAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFLTIuM0F0b21pYy1HSUYgdjEuMAD/Y3JlYXRvci9jb21tZW50OiBieSB0aG9tLm14bQAh+QQJYAAAACwAAAAAZABkAAAF/0AnjmRpnmiqrmvbsvI8K0Mtz3Rt33it73zvYFBIDIa6orGofE6Zzqi0GpVao9ZsdcvtarvgcLg7XpPL6bS6bW67XwN4O86uN+D4vL6O1+v7fX+CgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpZunG6gcrB8OqgGssLO0G7Ksr7u6vAEEB7Yisb3EAAnBycjKy8zNzs/PvxzRx7DTrNbX08/bptukG9Wf2OLequK94unO4urE2eoZ7vLw8vLg4eXg9u0X+vXvFPTbBy9BvG0IE2IjOIzgM33fBEpsKHEZxWAWhVkMFjHYwWIYgzkclhFYxWENg/+p5DiS3UhfFY9lBGmS5EqGKD+u/FXxWMZfGI8l7FbyV8WPKVv6qniso6+Kvyoe2wjs4i+KwD7KBLvxV8VfFY9ZBMZRF9ZjHJVp1MV1GEdpGnFhPbaRF9djHXlhPcbRGEdmFXlhXcbR2EZfWI9tpIXVGEdZWG/11RVsK6yswYIFW9yKMePDvBInS2W5suXIli9bzkzYMuPDvCJzK5zsLOnNnU87i7ZZs+rMr0PTrkZ7me1nt5f9Rra72e9lv5PFrva7GvBlwZMlrzas8GTCkAnfS+3b0PHUx1SPhU+9WPrT0N/Ww8f5fHvK0WvPr8W+Pv36X+unXw1f9vP9+fD7B+D/AnZToGz77WdDfnUBeF9eCOInF4TyGbjgXBIaSBCE80loYEEUyiWhfwd9SBeG9x2Eol0Z3mfffyXe9Z6KAs5XF4vwYbgfXTDGZ+N+dcn4X4771SXkgUAGSZ9+BxZJZHz6JWgkkfLp92CSQMpn34NF/ihffg8m6eN8+T2YpI3z5ffgkTPGV6WRvcoH35VG6iYffFcaeVt88F1ppGzxsXelkavFp+GOfs1nH5Zf89mH5dd68mWZtl9bYV0FADs=" alt="Hello Kitty Love">
         </div>
     </div>
 
     <script>
-        // CORREGIDO AQUÍ: El primer elemento de la lista para que coincida perfectamente al avanzar/retroceder
         const preguntas = [
             "¿Has estado bien?",
-            "¿Comes bien?",
+            "¿comes bien?",
             "¿Me extrañas..?",
-            "¿Piensas en mí..?",
-            "¿Pronto volveremos a hablar?",
-            "¿Lo volvemos a intentar una vez más..?"
+            "¿Piensas en mí..?”,
+            "¿Pronto volveremos a hablar..?",
+            "¿Lo volvemos a intentar una vez más.."
         ];
 
         let currentStep = 0;
