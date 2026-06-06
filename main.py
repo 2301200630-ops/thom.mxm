@@ -136,7 +136,7 @@ HTML_TEMPLATE = """
     </div>
 
     <div id="finalSection" style="display: none;">
-        <p class="final-text">¡Gracias por leer! Ya puedes cerrar esta pestañita, Te Amo Mi Negro. 💕</p>
+        <p class="final-text"> Esperaré por tu amor, Te Amo Mi Negro. 💕</p>
         <div class="gif-container">
         </div>
     </div>
