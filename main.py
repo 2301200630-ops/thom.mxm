@@ -120,8 +120,8 @@ HTML_TEMPLATE = """
 <body>
 
     <div class="card" id="mainCard">
-        <div class="ribbon" id="cardIcon">💘</div>
-        <div class="title" id="cardTitle">✨ Para mi flaco ✨</div>
+        <div class="ribbon" id="cardIcon">🎀</div>
+        <div class="title" id="cardTitle">💕 Para mi flaco 💕</div>
         
         <div id="gameSection">
             <div class="verse-container">
@@ -144,12 +144,12 @@ HTML_TEMPLATE = """
 
     <script>
         const preguntas = [
-            "¿Has estado bien?",
-            "¿comes bien?,",
-            "¿Me extrañas..?,",
-            "¿Piensas en mí..?,",
-            "¿Pronto volveremos a hablar..?,",
-            "¿Lo volveremos a intentar una última vez..? Mi Flaco... <'3"
+            "HolaaAmor ¿Has estado bien?",
+            "¿Comes bien?",
+            "¿Me extrañas..?",
+            "¿Piensas en mí..?",
+            "¿Pronto volveremos a hablar..?",
+            "¿Lo volvemos a intentar una vez más..? "
         ];
 
         let currentStep = 0;
