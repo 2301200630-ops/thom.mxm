@@ -145,7 +145,7 @@ HTML_TEMPLATE = """
     <script>
         const preguntas = [
             "¿Has estado bien?",
-            "¿comes bien?",
+            "¿Comes bien?",
             "¿Me extrañas..?",
             "¿Piensas en mí..?”,
             "¿Pronto volveremos a hablar..?",
