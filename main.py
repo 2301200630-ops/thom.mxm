@@ -1,7 +1,7 @@
 import os
-from flask import flask, render_template_string
+from flask import Flask, render_template_string
 
-app = flask(__name__)
+app = Flask(__name__)
 
 HTML_TEMPLATE = """
 <!DOCTYPE html>
@@ -11,109 +11,109 @@ HTML_TEMPLATE = """
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Negro. 💕</title>
     <style>
-        Body {
-            Background-color: #fce4ec;
-            Font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            Display: flex;
-            Justify-content: center;
-            Align-items: center;
-            Height: 100vh;
-            Margin: 0;
-            Overflow: hidden;
+        body {
+            background-color: #fce4ec;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
         }
         .card {
-            Background-color: #fff5f7;
-            Border: 2px solid #ffb3c6;
-            Border-radius: 20px;
-            Padding: 40px 20px;
-            Width: 85%;
-            Max-width: 500px;
-            Text-align: center;
-            Box-shadow: 0 4px 10px rgba(255, 179, 198, 0.3);
-            Position: relative;
+            background-color: #fff5f7;
+            border: 2px solid #ffb3c6;
+            border-radius: 20px;
+            padding: 40px 20px;
+            width: 85%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(255, 179, 198, 0.3);
+            position: relative;
         }
         .ribbon {
-            Font-size: 35px;
-            Margin-bottom: 10px;
-            Color: #ff4d6d;
+            font-size: 35px;
+            margin-bottom: 10px;
+            color: #ff4d6d;
         }
         .title {
-            Color: #ff4d6d;
-            Font-size: 20px;
-            Font-weight: bold;
-            Margin-bottom: 25px;
+            color: #ff4d6d;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 25px;
         }
         .verse-container {
-            Border: 1px dashed #ffb3c6;
-            Border-radius: 12px;
-            Padding: 30px 15px;
-            Margin-bottom: 25px;
-            Background-color: #fffdfd;
-            Min-height: 80px;
-            Display: flex;
-            Align-items: center;
-            Justify-content: center;
+            border: 1px dashed #ffb3c6;
+            border-radius: 12px;
+            padding: 30px 15px;
+            margin-bottom: 25px;
+            background-color: #fffdfd;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .verse {
-            Color: #c9184a;
-            Font-size: 18px;
-            Font-weight: bold;
-            Line-height: 1.5;
-            Margin: 0;
+            color: #c9184a;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.5;
+            margin: 0;
         }
         .btn-container {
-            Display: flex;
-            Justify-content: center;
-            Align-items: center;
-            Gap: 15px;
-            Min-height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            min-height: 100px;
         }
         .btn {
-            Color: white;
-            Border: none;
-            Border-radius: 25px;
-            Font-weight: bold;
-            Cursor: pointer;
-            Box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            Transition: transform 0.2s ease, background-color 0.2s;
-            Display: inline-block !important;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, background-color 0.2s;
+            display: inline-block !important;
         }
         .btn-yes {
-            Background-color: #2a9d8f;
-            Padding: 12px 35px;
-            Font-size: 16px;
+            background-color: #2a9d8f;
+            padding: 12px 35px;
+            font-size: 16px;
         }
         .btn-yes:hover {
-            Background-color: #3aa89b;
+            background-color: #3aa89b;
         }
         .btn-no {
-            Background-color: #9b2226;
-            Padding: 12px 25px;
-            Font-size: 14px;
+            background-color: #9b2226;
+            padding: 12px 25px;
+            font-size: 14px;
         }
         .btn-no:hover {
-            Background-color: #ae2012;
+            background-color: #ae2012;
         }
         
         #finalSection {
-            Text-align: center;
-            Padding: 20px;
-            Position: absolute;
-            Top: 40px; 
-            Width: 100%;
-            Box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            top: 40px; 
+            width: 100%;
+            box-sizing: border-box;
         }
         .final-text {
-            Color: #ff4d6d;
-            Font-size: 14px; 
-            Font-weight: bold;
-            Margin-bottom: 30px;
-            Padding: 0 10px;
+            color: #ff4d6d;
+            font-size: 14px; 
+            font-weight: bold;
+            margin-bottom: 30px;
+            padding: 0 10px;
         }
         .gif-container img {
-            Max-width: 150px; 
-            Height: auto;
-            Border-radius: 10px;
+            max-width: 150px; 
+            height: auto;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -143,7 +143,7 @@ HTML_TEMPLATE = """
     </div>
 
     <script>
-        Const preguntas = [
+        const preguntas = [
             "¿Has estado bien?",
             "¿comes bien?,",
             "¿Me extrañas..?,",
@@ -152,51 +152,51 @@ HTML_TEMPLATE = """
             "¿Lo volveremos a intentar una última vez..? Mi Flaco... <'3"
         ];
 
-        Let currentStep = 0;
-        Let yesScale = 1.0;
-        Let noScale = 1.0;
+        let currentStep = 0;
+        let yesScale = 1.0;
+        let noScale = 1.0;
 
-        Function handleNoClick() {
-            Const btnYes = document.getElementById('btnYes');
-            Const btnNo = document.getElementById('btnNo');
+        function handleNoClick() {
+            const btnYes = document.getElementById('btnYes');
+            const btnNo = document.getElementById('btnNo');
 
-            If (currentStep === preguntas.length - 1) {
-                YesScale += 0.25;
-                NoScale -= 0.15;
+            if (currentStep === preguntas.length - 1) {
+                yesScale += 0.25;
+                noScale -= 0.15;
 
-                If (btnYes && btnNo) {
-                    BtnYes.style.transform = "scale(" + yesScale + ")";
-                    BtnNo.style.transform = "scale(" + noScale + ")";
+                if (btnYes && btnNo) {
+                    btnYes.style.transform = "scale(" + yesScale + ")";
+                    btnNo.style.transform = "scale(" + noScale + ")";
 
-                    If (noScale <= 0.25) {
-                        BtnNo.style.display = 'none';
+                    if (noScale <= 0.25) {
+                        btnNo.style.display = 'none';
                     }
                 }
             } else {
-                NextQuestion();
+                nextQuestion();
             }
         }
 
-        Function nextQuestion() {
-            CurrentStep++;
+        function nextQuestion() {
+            currentStep++;
 
-            YesScale = 1.0;
-            NoScale = 1.0;
-            Const btnYes = document.getElementById('btnYes');
-            Const btnNo = document.getElementById('btnNo');
+            yesScale = 1.0;
+            noScale = 1.0;
+            const btnYes = document.getElementById('btnYes');
+            const btnNo = document.getElementById('btnNo');
             
-            If (btnYes && btnNo) {
-                BtnYes.style.transform = 'scale(1)';
-                BtnNo.style.transform = 'scale(1)';
-                BtnNo.style.display = 'inline-block';
+            if (btnYes && btnNo) {
+                btnYes.style.transform = 'scale(1)';
+                btnNo.style.transform = 'scale(1)';
+                btnNo.style.display = 'inline-block';
             }
 
-            If (currentStep < preguntas.length) {
-                Document.getElementById('questionText').innerText = preguntas[currentStep];
+            if (currentStep < preguntas.length) {
+                document.getElementById('questionText').innerText = preguntas[currentStep];
             } else {
-                Document.getElementById('mainCard').style.display = 'none';
-                Document.body.style.backgroundColor = '#ffffff'; 
-                Document.getElementById('finalSection').style.display = 'block';
+                document.getElementById('mainCard').style.display = 'none';
+                document.body.style.backgroundColor = '#ffffff'; 
+                document.getElementById('finalSection').style.display = 'block';
             }
         }
     </script>
@@ -206,7 +206,7 @@ HTML_TEMPLATE = """
 
 @app.route('/')
 def index():
-    Return render_template_string(HTML_TEMPLATE)
+    return render_template_string(HTML_TEMPLATE)
 
 if __name__ == '__main__':
-    App.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
