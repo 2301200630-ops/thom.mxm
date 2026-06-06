@@ -138,7 +138,7 @@ HTML_TEMPLATE = """
     <div id="finalSection" style="display: none;">
         <p class="final-text">¡Gracias por leer! Ya puedes cerrar esta pestañita, Te Amo Mi Negro. 💕</p>
         <div class="gif-container">
-            <img src="https://pub-c0490b4d4b3149528d9d4949bd51a140.r2.dev/kitty-love.gif" alt="Hello Kitty Love">
+            <">
         </div>
     </div>
 
