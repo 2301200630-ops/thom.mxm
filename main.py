@@ -138,7 +138,6 @@ HTML_TEMPLATE = """
     <div id="finalSection" style="display: none;">
         <p class="final-text">¡Gracias por leer! Ya puedes cerrar esta pestañita, Te Amo Mi Negro. 💕</p>
         <div class="gif-container">
-            <">
         </div>
     </div>
 
